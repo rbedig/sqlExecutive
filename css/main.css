@@ -1,0 +1,219 @@
+/* Ron Bedig */
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('../fonts/Oxygen-webfont.eot');
+    src: url('../fonts/Oxygen-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Oxygen-webfont.woff') format('woff'),
+         url('../fonts/Oxygen-webfont.ttf') format('truetype'),
+         url('../fonts/Oxygen-webfont.svg#OxygenRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oxygen';
+    src: url('../fonts/Oxygen-Bold-webfont.eot');
+    src: url('../fonts/Oxygen-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Oxygen-Bold-webfont.woff') format('woff'),
+         url('../fonts/Oxygen-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Oxygen-Bold-webfont.svg#OxygenBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oxygen Mono';
+    src: url('../fonts/OxygenMono-Regular-webfont.eot');
+    src: url('../fonts/OxygenMono-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/OxygenMono-Regular-webfont.woff') format('woff'),
+         url('../fonts/OxygenMono-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/OxygenMono-Regular-webfont.svg#OxygenMonoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: 'Oxygen', sans-serif;
+	font-size: 16px;
+	color: #D9D9D9;
+	line-height: 1.5em;
+	text-align: left;
+	background-color: black;
+}
+
+label {
+	display: inline-block;
+}
+
+#entry-form {
+	min-width: 768px;
+}
+
+#control {
+	padding: 5px 10px;
+}
+
+#control button, #modalMessage button {
+	display: inline-block;
+	font-family: inherit;
+	font-size: 22px;
+	font-weight: bold;
+	outline-style: none;
+	outline-width: 0;
+	border-radius: 3px;
+	padding: 0 5px 3px 5px;
+}
+
+#control button {
+	color: teal;
+	background-color: black;
+	border: 3px solid teal;
+	margin: 5px 8px 5px 0;
+}
+
+#control input, #control select {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background-color: black;
+	border: 2px solid teal;
+	border-radius: 3px;
+	padding: .2em;
+	margin: 5px;
+}
+
+#control button:hover, #control button:focus, #control input:focus {
+	color: white;
+	background-color: #102A30;
+}
+
+.hidden {display: none;}
+
+#control button.disabled {border-color: gray; color: gray;}
+
+#query {
+	padding: 0 25px 10px 10px; /* text area misbehaves on right */
+}
+
+#query textarea {
+	font-family: 'Oxygen Mono', monospace;
+	font-size: 16px;
+	color: inherit;
+	line-height: inherit;
+	background-color: black;
+	width: 100%;
+	height: 3em;
+	border: 3px solid teal;
+	border-radius: 3px;
+	resize: vertical;
+	overflow: auto;
+	padding: 4px;
+}
+
+#query textarea:focus {
+	color: white;
+	background-color: #102A30;
+}
+
+#result {
+	font-family: 'Oxygen Mono', monospace;
+	font-size: 16px;
+}
+
+.resultSet {
+	width: 2000%; 
+	padding: 0 10px 10px 10px;
+}
+
+.resultText {
+	font-size: 1.2em;
+	padding: 0 15px 10px 15px;
+}
+
+.error {
+	color: #E0B060;
+}
+
+.col {
+	resize: horizontal;
+	float: left;
+	border: solid teal;
+	border-width: 2px 1px;
+	overflow: hidden; 
+}
+
+.xNarrow { width: 3em; }
+.narrow { width: 5em; }
+.medium { width: 10em; }
+.wide { width: 20em; }
+.xWide { width: 40em; }
+
+.head, .cell, .cellFree {
+	display: inline-block;
+	resize: none;
+	overflow: hidden;
+	padding-bottom: .25em;
+	margin-left: .35em;
+}
+
+.head {
+	height: 1em;
+	border-bottom: 1px solid teal;
+}
+
+.cell {
+	height: 1em;
+	word-wrap: break-word; /* want as much content as possible to display, but this does not appear to help */
+}
+
+.cellFree {
+	/* no height set */
+	margin-right: .35em;
+}
+
+#modalLightBox {
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	padding-top: 210px;
+	background: rgba(128,128,128,0.7);
+	z-index: 99999;
+}
+
+#modalMessage {
+	text-align: center;
+}
+
+#modalMessage button {
+	background-color: #E0B060;
+	color: white;
+	border: 3px solid white;
+	margin-left: 10px;
+}
+
+#modalText {
+	display: inline-block;
+	font-size: 24px;
+	color: #E0B060;
+}
+
+#modalCancel:hover, #modalCancel:active {background-color: red;}
+
+#modalOk:hover, #modalOk:active {background-color: teal;}
+
+.clearfix:before, .clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	overflow: hidden; 
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix { /* for IE8 */
+	zoom: 1;
+}
